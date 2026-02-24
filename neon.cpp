@@ -3,24 +3,24 @@
 // Example: 9 -> 9*9 = 81 and 8+1 = 9
 #include <iostream>
 using namespace std;
-
-bool isNeon(int n) {
-    long long sq = (long long)n * n;
-    int sum = 0;
-    while (sq > 0) {
-        sum += sq % 10;
-        sq /= 10;
+int main(){
+    int n,rem,sum=0,square;
+    cout<<"enter the number :"<<endl;
+    cin>>n;
+    square=n*n;
+    while(n!=0)
+    {
+        rem=n%10;
+        sum=sum+rem;
+        n=n/10;
     }
-    return sum == n;
-}
-
-int main() {
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
-    if (isNeon(num))
-        cout << num << " is a neon number." << endl;
+    if(sum==square)
+    {
+        cout<<"the number is neon number"<<endl;
+    }
     else
-        cout << num << " is not a neon number." << endl;
+    {
+        cout<<"the number is not neon number"<<endl;
+    }
     return 0;
 }
